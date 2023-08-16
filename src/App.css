@@ -1,12 +1,17 @@
-.block__content{
+.block__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 700px;
+  background-color: antiquewhite;
 }
 
-.heading__primary{
+.heading__primary {
   font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text__default {
   font-family: Arial, Helvetica, sans-serif;
 }
