@@ -21,11 +21,12 @@ const Header = () => {
             <h1 className="heading__primary">I'm</h1>
             <a className="Header__link" href="#">
               <h1 className="heading__primary">Nico </h1>
-              <div className="hero__underline"></div>
+              <div className="Header__underline"></div>
             </a>
           </div>
         </div>
       </div>
+      {/* Temporary second cube item for testing */}
       <div className="Header__lead-bg" style={{ width: cubeWidth }}>
         <div className="Header__lead">
           <h1 className="heading__primary">Hi 👋</h1>
@@ -33,12 +34,12 @@ const Header = () => {
             <h1 className="heading__primary">I'm</h1>
             <a className="Header__link" href="#">
               <h1 className="heading__primary">Nico </h1>
-              <div className="hero__underline"></div>
+              <div className="Header__underline"></div>
             </a>
           </div>
         </div>
       </div>
-
+      {/* Testing of an animated SVG */}
       {/* <div className="Header__animation">
         <Animation />
       </div> */}
