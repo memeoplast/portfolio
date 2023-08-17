@@ -1,7 +1,93 @@
-.Header__bg {
-  width: 100%;
-  height: 100%;
+.block__header {
   display: flex;
-  flex-direction: column;
-  background-color: aquamarine;
+  flex: 1;
+  flex-direction: row;
+  min-height: inherit;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  --block__header-height: 50vh;
+  max-height: var(--block__header-height);
+  background-color: var(--color--accent-shade1);
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
 }
+
+.Header__lead-bg {
+  background-color: var(--color--accent-shade2);
+  display: flex;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__underline {
+  width: 100%;
+  height: 15px;
+  background-color: var(--color--highlight);
+  /* transition: height 0.3s ease-in-out, margin-top 0.3s ease-in-out; */
+  margin-top: -4.8rem;
+  z-index: 1;
+}
+
+.Header__Link-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.Header__link {
+  text-decoration: none;
+  z-index: 3;
+  color: var(--color--text-default);
+  position: relative;
+}
+/* .Header__animation {
+  aspect-ratio: 1/1;
+  width: 50%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.Animation__block {
+  transition: transform 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moved {
+  transform: translate(570px, -470px) scale(0.5);
+}
+
+.fadeInDiv {
+  opacity: 0;
+  transform: translate(0, 20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.Animation__after-img {
+  aspect-ratio: 1/1;
+}
+
+.Animation__container {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+} */
+
+/*Header Link Animation Idea*/
+/* .Header__link:hover .hero__underline {
+  height: 60px;
+  margin-top: -7.6rem;
+}
+
+.Header__link:hover .hero__underline {
+  animation: bounce 0.6s ease-in-out;
+} */
