@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-height: 50vh;
+  /* max-height: 80vh; */
   background-color: var(--color--accent-shade1);
   @media screen and (max-width: 1000px) {
     flex-direction: column;
@@ -88,8 +88,4 @@
 /* .Header__link:hover .hero__underline {
   height: 60px;
   margin-top: -7.6rem;
-}
-
-.Header__link:hover .hero__underline {
-  animation: bounce 0.6s ease-in-out;
-} */
+}*/
