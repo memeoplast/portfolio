@@ -61,11 +61,3 @@
   margin-top: -50px;
   border-radius: 3px;
 }
-
-Portfolio__underline {
-  width: 100%;
-  height: 15px;
-  margin-top: -1rem;
-  margin-bottom: 3rem;
-  background-color: var(--color--highlight);
-}
