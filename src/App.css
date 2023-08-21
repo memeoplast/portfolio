@@ -24,6 +24,15 @@
 .text__default {
   font-family: var(--font--secondary);
 }
+.text__light {
+  font-family: var(--font--secondary);
+  color: white;
+}
+
+.a__default {
+  text-decoration: none;
+  color: inherit;
+}
 
 .app {
   background-color: white;
