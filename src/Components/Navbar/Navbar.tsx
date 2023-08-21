@@ -5,6 +5,9 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
   //   const [isHovered, setIsHovered] = useState(false);
 
   //   const handleHover = () => {
@@ -39,19 +42,19 @@ const Navbar = () => {
         <div className="navbar__links-container">
           <ul className="navbar__list">
             <li className="navbar__list-item">
-              <a className="navbar__link" href="#">
+              <a className="navbar__link" href="#" onClick={closeMenu}>
                 <h2 className="heading__secondary">Home</h2>
 
                 {/* <div
-            className="navbar__link-underline"
-            onMouseEnter={handleHover}
-            onMouseLeave={handleMouseLeave}
-            style={underlineStyle}
-          ></div> */}
+                  className="navbar__link-underline"
+                  onMouseEnter={handleHover}
+                  onMouseLeave={handleMouseLeave}
+                  style={underlineStyle}
+                ></div> */}
               </a>
             </li>
             <li className="navbar__list-item">
-              <a className="navbar__link" href="#">
+              <a className="navbar__link" href="#" onClick={closeMenu}>
                 <h2 className="heading__secondary">About</h2>
 
                 {/* <div
@@ -64,7 +67,7 @@ const Navbar = () => {
             </li>
 
             <li className="navbar__list-item">
-              <a className="navbar__link" href="#">
+              <a className="navbar__link" href="#" onClick={closeMenu}>
                 <h2 className="heading__secondary">Projects</h2>
 
                 {/* <div
@@ -77,7 +80,7 @@ const Navbar = () => {
             </li>
 
             <li className="navbar__list-item">
-              <a className="navbar__link" href="#">
+              <a className="navbar__link" href="#" onClick={closeMenu}>
                 <h2 className="heading__secondary">Contact</h2>
 
                 {/* <div
