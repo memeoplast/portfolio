@@ -15,6 +15,11 @@
 .heading__primary {
   font-size: 70px;
   font-family: var(--font--primary);
+
+}
+.heading__secondary {
+  font-size: 25px;
+
   text-align: center;
 
   @media screen and (max-width: 1000px) {
@@ -23,11 +28,14 @@
 }
 .heading__secondary {
   font-size: 30px;
+
   font-family: var(--font--primary);
 }
 
 .text__default {
   font-family: var(--font--secondary);
+
+
   font-size: 19px;
 }
 .text__hero {
@@ -36,6 +44,7 @@
   line-break: auto;
   max-width: 500px;
   text-align: center;
+
 }
 
 .app {
