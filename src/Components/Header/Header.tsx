@@ -1,48 +1,52 @@
-import { React, useEffect, useState } from "react";
+import React from "react";
 import "./Header.css";
-// import Animation from "./Animation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHtml5,
+  faCss3Alt,
+  faJs,
+  faReact,
+  faPython,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
-  const [cubeWidth, setCubeWidth] = useState(null);
-
-  useEffect(() => {
-    const headerElement = document.getElementById("header");
-    const blockHeaderHeight = window.getComputedStyle(headerElement).height;
-    const calculatedCubeWidth = (parseFloat(blockHeaderHeight) * 2) / 3;
-    setCubeWidth(calculatedCubeWidth);
-  }, []);
-
   return (
-    <div className="block__header" id="header">
-      <div className="Header__lead-bg" style={{ width: cubeWidth }}>
-        <div className="Header__lead">
-          <h1 className="heading__primary">Hi 👋</h1>
-          <div className="Header__Link-container">
-            <h1 className="heading__primary">I'm</h1>
-            <a className="Header__link" href="#">
-              <h1 className="heading__primary">Nico </h1>
-              <div className="Header__underline"></div>
-            </a>
+    <div className="block__header">
+      <div className="header__content">
+        <div className="header__lead-bg">
+          <div className="header__lead">
+            <h1 className="heading__primary">Hi 👋 I'm Nico</h1>
+            <p className="text__hero">
+              I'm a passionate frond-end developer based in Austria. Some more
+              text will go here eventually.
+            </p>
           </div>
         </div>
+        <div className="header__img-container"></div>
       </div>
-      {/* Temporary second cube item for testing */}
-      <div className="Header__lead-bg" style={{ width: cubeWidth }}>
-        <div className="Header__lead">
-          <h1 className="heading__primary">Hi 👋</h1>
-          <div className="Header__Link-container">
-            <h1 className="heading__primary">I'm</h1>
-            <a className="Header__link" href="#">
-              <h1 className="heading__primary">Nico </h1>
-              <div className="Header__underline"></div>
-            </a>
-          </div>
+
+      <div className="header__subcontent">
+        <p className="header__skills">Stack </p>
+        <div className="header__icons">
+          <ul className="header__icons-list">
+            <li className="header__icons-list-item">
+              <FontAwesomeIcon icon={faHtml5} size="2xl" />
+            </li>
+            <li className="header__icons-list-item">
+              <FontAwesomeIcon icon={faCss3Alt} size="2xl" />
+            </li>
+            <li className="header__icons-list-item">
+              <FontAwesomeIcon icon={faJs} size="2xl" />
+            </li>
+            <li className="header__icons-list-item">
+              <FontAwesomeIcon icon={faReact} size="2xl" />
+            </li>
+            <li className="header__icons-list-item">
+              <FontAwesomeIcon icon={faPython} size="2xl" />
+            </li>
+          </ul>
         </div>
       </div>
-      {/* Testing of an animated SVG */}
-      {/* <div className="Header__animation">
-        <Animation />
-      </div> */}
     </div>
   );
 };
