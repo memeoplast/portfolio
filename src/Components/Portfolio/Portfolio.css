@@ -60,6 +60,7 @@
   height: 50px;
   margin-top: -50px;
   border-radius: 3px;
+
 }
 
 Portfolio__underline {
@@ -68,4 +69,5 @@ Portfolio__underline {
   margin-top: -1rem;
   margin-bottom: 3rem;
   background-color: var(--color--highlight);
+
 }
