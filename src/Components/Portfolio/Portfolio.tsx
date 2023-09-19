@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Portfolio = () => {
   return (
-    <div className="portfolio__block-content">
+    <div className="portfolio__block-content" id="Projects">
       <div className="portfolio__grid">
         <div className="portfolio__card">
           <div className="portfolio__card-img">

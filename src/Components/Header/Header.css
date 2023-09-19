@@ -28,22 +28,8 @@
   @media screen and (max-width: 1000px) {
     flex-direction: column-reverse;
     gap: 2rem;
-    /* & :nth-child(1) {
-      order: 2;
-    } */
   }
 }
-
-/* .header__lead-bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  border-radius: 5px;
-  margin-left: 3rem;
-  padding: 2rem;
-} */
 
 .header__img-container {
   background-image: url(../../assets/Nico.jpeg);
@@ -66,15 +52,6 @@
   }
 }
 
-/* .header__img {
-  animation: morph 8s ease-in-out infinite;
-  border: 6px solid rgba(255, 165, 0, 1);
-  border-radius: 50% 40% 30% 70%/60% 30% 70% 40%;
-  box-shadow: 0 0 200px var(--color--background-primary);
-  position: relative;
-  transition: all 1s ease-in-out;
-  max-width: 350px;
-} */
 .header__subcontent {
   padding-top: 5rem;
   display: flex;
