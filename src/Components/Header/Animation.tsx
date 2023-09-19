@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import anime from "animejs";
+import { Link } from "react-router-dom";
 
 export default class Animation extends Component {
   state = {
@@ -17,6 +18,9 @@ export default class Animation extends Component {
       },
       complete: () => {
         this.setState({ animationFinished: true });
+        setTimeout(() => {
+          this.setState({ flyingStarted: true });
+        }, 3000);
       },
     });
   }
@@ -31,7 +35,7 @@ export default class Animation extends Component {
         <div
           className={`Animation__block ${
             this.state.animationFinished ? "moved" : ""
-          }`}
+          } ${this.state.flyingStarted ? "flying" : ""}`}
         >
           <svg
             viewBox="80 -150 800 800"
@@ -720,14 +724,15 @@ export default class Animation extends Component {
             </g>
           </svg>
         </div>
-        {/* <div
+        <div
           className={`fadeInDiv ${this.state.animationFinished ? "show" : ""}`}
         >
-          <img
-            className="Animation__after-img"
-            src="src/assets/Nico.jpeg"
-          ></img>
-        </div> */}
+          {" "}
+          <Link to="/Contact">
+            {" "}
+            <p className="cta__button-text">Let's Go!</p>{" "}
+          </Link>
+        </div>
       </div>
     );
   }

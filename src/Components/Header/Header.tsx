@@ -17,8 +17,7 @@ const Header = () => {
           <div className="header__lead">
             <h1 className="heading__primary">Hi 👋 I'm Nico</h1>
             <p className="text__hero">
-              I'm a passionate frond-end developer based in Austria. Some more
-              text will go here eventually.
+              I'm a passionate frond-end developer based in Austria.
             </p>
           </div>
         </div>
