@@ -31,7 +31,8 @@ const Portfolio = () => {
             </div>
             <p className="text__default">
               A website for a digital consulting company using react and plain
-              CSS. Based on my own design.
+              CSS. It features a Dark-Mode toggle react-router and a function
+              contact form. Based on my own design.
             </p>
             <div className="portfolio__card-text-icons">
               {" "}
