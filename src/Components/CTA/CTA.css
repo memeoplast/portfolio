@@ -27,7 +27,7 @@
   display: flex;
   align-self: center;
   justify-content: center;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1100px) {
     display: none;
   }
 }
@@ -63,10 +63,10 @@
   background-color: var(--color--highlight-red);
   border-radius: 90%;
   box-shadow: 10px 20px black;
+  transition: 0.5s ease-in-out;
 }
 .fadeInDiv:hover {
   box-shadow: 5px 10px black;
-  transition: 0.5s ease;
 }
 .show {
   opacity: 1;
@@ -88,13 +88,16 @@
 
 .cta__connect {
   display: none;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1100px) {
     background-color: var(--color--highlight-red);
     display: flex;
     flex-direction: column;
     border-radius: 90%;
     box-shadow: 10px 20px black;
     width: 40%;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
   }
 }
 .Animation__container {
