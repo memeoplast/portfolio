@@ -15,6 +15,11 @@
 .Form {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+  @media screen and (max-width: 900px) {
+    width: 60%;
+  }
 }
 .Form__input {
   background-color: var(--color--background-secondary);

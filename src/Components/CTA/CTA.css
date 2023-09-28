@@ -53,7 +53,6 @@
   opacity: 0;
   visibility: hidden;
   transform: translate(-80px, 200px);
-  transition: opacity 3s ease, transform 1s ease;
   flex-direction: column;
   border-radius: 50px;
   width: 50%;
@@ -63,7 +62,7 @@
   background-color: var(--color--highlight-red);
   border-radius: 90%;
   box-shadow: 10px 20px black;
-  transition: 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, opacity 3s ease, transform 1s ease;
 }
 .fadeInDiv:hover {
   box-shadow: 5px 10px black;

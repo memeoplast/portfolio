@@ -1,23 +1,36 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState, SyntheticEvent } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import Button from "../Button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
+interface Errors {
+  user_name?: string;
+  user_email?: string;
+  message?: string;
+}
 
 export const Contact = () => {
-  const form = useRef();
-  const [errors, setErrors] = useState({});
+  const form = useRef<HTMLFormElement>(null);
+  const [errors, setErrors] = useState<Errors>({});
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [successMessage, setSuccessMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     const regex =
       /^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     return regex.test(email);
   };
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: Errors = {};
     let isValid = true;
+
+    if (!form.current) {
+      return false;
+    }
 
     const userName = form.current.user_name.value;
     const userEmail = form.current.user_email.value;
@@ -45,30 +58,34 @@ export const Contact = () => {
     return isValid;
   };
 
-  const sendEmail = async (e) => {
+  const sendEmail = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      try {
-        await emailjs.sendForm(
-          "service_giaqmyh",
-          "template_poq85d6",
-          form.current,
-          "2hztsgudSXS9mZwzX"
-        );
+    if (!form.current) return;
+    if (isLoading) return;
 
-        console.log("Successfully sent Email");
-        setIsFormVisible(false);
-        setSuccessMessage("Appreciate it! I'll get back to you ASAP.");
-      } catch (error) {
-        console.log(error.text);
-      }
+    if (!validateForm()) return;
+
+    try {
+      setIsLoading(true);
+      await emailjs.sendForm(
+        "service_giaqmyh",
+        "template_poq85d6",
+        form.current!,
+        "2hztsgudSXS9mZwzX"
+      );
+
+      setIsFormVisible(false);
+      setSuccessMessage("Appreciate it! I'll get back to you ASAP.");
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
     }
   };
 
   return (
     <div>
-      <div className="block__contact">
+      <div className="block__contact" id="Contact">
         {isFormVisible ? (
           <div className="Form">
             <h1 className="heading__gradient">Reach out!</h1>
@@ -89,7 +106,20 @@ export const Contact = () => {
               {errors.message && (
                 <p className="error-message">{errors.message}</p>
               )}
-              <input className="button__large" type="submit" value="Send" />
+              <button
+                className="button__large"
+                type="submit"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <span>Loading</span>
+                    <FontAwesomeIcon icon={faSpinner} spin />
+                  </>
+                ) : (
+                  <div>Send</div>
+                )}
+              </button>
             </form>
           </div>
         ) : (

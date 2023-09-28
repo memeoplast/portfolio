@@ -1,9 +1,35 @@
-import React from "react";
+import { useEffect } from "react";
 import Animation from "../Header/Animation";
 import "./CTA.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+interface ScrollToSection {
+  id: string;
+}
 
 const CTA = () => {
+  const history = useNavigate();
+
+  const handleScrollToElement = ({ id }: ScrollToSection) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  };
+
+  const handleNavLinkClick = (id: string) => {
+    history(`/#${id}`);
+    handleScrollToElement({ id });
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.slice(1));
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  }, []);
   return (
     <div className="block__CTA">
       <div className="cta__content">
@@ -18,8 +44,13 @@ const CTA = () => {
           <Animation />
         </div>
         <div className="cta__connect">
-          <Link to="/Contact">
-            {" "}
+          <Link
+            to="/Contact#Contact"
+            rel="noreferrer"
+            onClick={() => {
+              handleNavLinkClick("Contact");
+            }}
+          >
             <p className="cta__button-text">Let's Go!</p>{" "}
           </Link>
         </div>

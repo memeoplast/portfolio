@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,13 +10,13 @@ import {
 
 const Header = () => {
   return (
-    <div className="block__header">
+    <div className="block__header" id="Home">
       <div className="header__content">
         <div className="header__lead-bg">
           <div className="header__lead">
             <h1 className="heading__primary">Hi 👋 I'm Nico</h1>
             <p className="text__hero">
-              I'm a passionate frond-end developer based in Austria.
+              I'm a passionate front-end developer based in Austria.
             </p>
           </div>
         </div>

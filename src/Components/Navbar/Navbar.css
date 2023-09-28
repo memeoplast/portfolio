@@ -26,7 +26,6 @@
     flex-direction: column;
     text-align: center;
     background-color: var(--color--background-primary);
-    /* padding: 4rem 3rem; */
     position: fixed;
     right: 0px;
     top: 0px;
@@ -58,20 +57,11 @@
 .navbar__list-item {
   margin: 0;
 }
-
 .navbar__link {
   text-decoration: none;
   color: var(--color--text-default);
   transition: all 0.3s;
 }
-
-/* .navbar__link-underline {
-  width: 100%;
-  height: 15px;
-  margin-top: -1rem;
-  margin-bottom: 3rem;
-  background-color: var(--color--highlight);
-} */
 
 .navbar__link:hover {
   color: var(--color--highlight-red);

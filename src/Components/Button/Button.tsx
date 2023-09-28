@@ -1,8 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Button.css";
 
-const Button = ({ text, url }) => {
+interface Props {
+  text: string;
+  url: string;
+}
+
+const Button = ({ text, url }: Props) => {
   return (
     <div className="button__large">
       <Link to={url} rel="norefferer">

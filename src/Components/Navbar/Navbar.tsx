@@ -1,24 +1,63 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+
+interface ScrollToSection {
+  id: string;
+}
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-  const handleScrollToElement = (id) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+  const history = useNavigate();
+
+  const handleScrollToElement = ({ id }: ScrollToSection) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
   };
 
+  const handleNavLinkClick = (id: string) => {
+    history(`/#${id}`);
+    closeMenu();
+    handleScrollToElement({ id });
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.slice(1));
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
   return (
     <div className="navbar">
       <div className="navbar__logo">
-        <Link to="/">
+        <Link
+          to="/"
+          rel="noreferrer"
+          onClick={() => {
+            handleScrollToElement({ id: "Home" });
+            closeMenu();
+          }}
+        >
           <h2 className="heading__secondary">NMG.CODES</h2>
         </Link>
       </div>
@@ -28,11 +67,10 @@ const Navbar = () => {
             <li className="navbar__list-item">
               <Link
                 className="navbar__link"
-                to="/"
+                to="/#Home"
                 rel="noreferrer"
                 onClick={() => {
-                  handleScrollToElement("");
-                  closeMenu();
+                  handleNavLinkClick("Home");
                 }}
               >
                 <h2 className="heading__secondary">Home</h2>
@@ -41,11 +79,10 @@ const Navbar = () => {
             <li className="navbar__list-item">
               <Link
                 className="navbar__link"
-                to="/"
+                to="/#About"
                 rel="noreferrer"
                 onClick={() => {
-                  handleScrollToElement("About");
-                  closeMenu();
+                  handleNavLinkClick("About");
                 }}
               >
                 <h2 className="heading__secondary">About</h2>
@@ -55,11 +92,10 @@ const Navbar = () => {
             <li className="navbar__list-item">
               <Link
                 className="navbar__link"
-                to="/"
+                to="/#Projects"
                 rel="noreferrer"
                 onClick={() => {
-                  handleScrollToElement("Projects");
-                  closeMenu();
+                  handleNavLinkClick("Projects");
                 }}
               >
                 <h2 className="heading__secondary">Projects</h2>
@@ -71,7 +107,9 @@ const Navbar = () => {
                 className="navbar__link"
                 to="/Contact"
                 rel="noreferrer"
-                onClick={closeMenu}
+                onClick={() => {
+                  handleNavLinkClick("Contact");
+                }}
               >
                 {" "}
                 <h2 className="heading__secondary">Contact</h2>

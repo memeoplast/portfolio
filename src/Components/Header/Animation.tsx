@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import anime from "animejs";
 import { Link } from "react-router-dom";
 
@@ -13,6 +13,8 @@ export default class Animation extends Component {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: "cubicBezier(.5, .05, .1, .3)",
       duration: 1000,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore ts2304
       delay: function (el, i) {
         return i * 100;
       },
@@ -35,6 +37,8 @@ export default class Animation extends Component {
         <div
           className={`Animation__block ${
             this.state.animationFinished ? "moved" : ""
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore ts2304
           } ${this.state.flyingStarted ? "flying" : ""}`}
         >
           <svg
@@ -728,9 +732,8 @@ export default class Animation extends Component {
           className={`fadeInDiv ${this.state.animationFinished ? "show" : ""}`}
         >
           {" "}
-          <Link to="/Contact">
-            {" "}
-            <p className="cta__button-text">Let's Go!</p>{" "}
+          <Link to="/Contact" rel="noreferrer">
+            <p className="cta__button-text">Let's Go!</p>
           </Link>
         </div>
       </div>

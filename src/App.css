@@ -11,6 +11,9 @@
   padding: 2rem 0;
   min-height: 700px;
   background-color: var(--color--background-primary);
+  @media screen and (max-width: 1000px) {
+    margin: 0;
+  }
 }
 
 .heading__primary {
@@ -22,6 +25,10 @@
     font-size: 50px;
     margin: 0;
   }
+  @media screen and (max-width: 700px) {
+    font-size: 40px;
+    margin: 0;
+  }
 }
 a:-webkit-any-link {
   text-decoration: none;
@@ -29,16 +36,16 @@ a:-webkit-any-link {
 }
 
 .heading__secondary {
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
   font-family: var(--font--primary);
-  @media screen and (max-width: 900px) {
-    font-size: 30px;
+  @media screen and (max-width: 300px) {
+    font-size: 20px;
   }
 }
 
 .heading__gradient {
-  font-size: 70px;
+  font-size: 100px;
   font-family: var(--font--primary);
   text-align: center;
   margin: 5rem;
@@ -48,6 +55,10 @@ a:-webkit-any-link {
   -webkit-text-fill-color: transparent;
 
   @media screen and (max-width: 1000px) {
+    font-size: 70px;
+    margin: 0;
+  }
+  @media screen and (max-width: 300px) {
     font-size: 50px;
     margin: 0;
   }
@@ -92,7 +103,10 @@ a:-webkit-any-link {
   --color--highlight-red: #ec6974;
   --color--highlight-yellow: #f7f052;
   --color--text-default: black;
-  --color--text-light: var(--color--background-primary);
   --font--primary: Poppins;
   --font--secondary: Mulish;
+}
+
+::selection {
+  background-color: var(--color--highlight-yellow);
 }
