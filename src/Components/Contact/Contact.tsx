@@ -11,7 +11,7 @@ interface Errors {
   message?: string;
 }
 
-export const Contact = () => {
+export const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<Errors>({});
   const [isFormVisible, setIsFormVisible] = useState(true);
